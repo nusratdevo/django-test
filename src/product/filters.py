@@ -1,9 +1,9 @@
 import django_filters
 from .models import Product, ProductVariant
 
-class ProductFilter(django_filters.FilterSet):                            # Stockfilter used to filter based on name
+class ProductFilter(django_filters.FilterSet):                           
     title = django_filters.CharFilter(lookup_expr='icontains')   
-    updated_at = django_filters.DateTimeFilter(lookup_expr='icontains')        # allows filtering without entering the full name
+    updated_at = django_filters.DateTimeFilter(lookup_expr='icontains')       
     class Meta:
         model = Product
         fields = ['title','updated_at' ]
